@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const radius = +prompt('radius');
+        const height = +prompt('height');
+
+        const cylinder = {
+              radius: radius,
+              height: height,
+              getvolume: function() {
+        return this.getArea() * this.height;
+        },
+              getArea: function() {
+        return 3.14 * this.radius**2;
+        },
+    };
+
+
+        function getResult(a, b, symb) {
+        switch (symb) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        }
+    }
+
+    let numbA = +prompt('A');
+    let numbB = +prompt('B');
+    let mathSymbol = prompt('+ - * /');
+    let result = getResult(numbA, numbB, mathSymbol);
+    alert(result);
+
+
+    function isCharPresent(text, symb) {
+         for (let i = 0, len = text.length; i < len; i++) {
+        if(text[i] === symb) {
+            return true
+            }
+     }
+        return false
+    }
+
+    let myText = prompt('text');
+    let isSymbol = prompt('symbol');
+    alert(isCharPresent(myText, isSymbol))
+
+
+    function charIndexOf(text, symb) {
+        for (let i = 0, len = text.length; i < len; i++) {
+        if(text[i] === symb) {
+            return i
+         }
+        }
+        return -1
+    }
+
+    let myText2 = prompt('text');
+    let isSymbol2 = prompt('symbol');
+    alert(charIndexOf(myText, isSymbol))
+    </script>
+</body>
+</html>
